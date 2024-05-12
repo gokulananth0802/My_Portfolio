@@ -107,6 +107,38 @@ div.width{
 span.clgadd,.homeadd{
   color:#0aca7d
 }
+  .timeline{
+        margin:auto 20px;
+        max-width:90%;
+        border-left:1px solid black;
+        padding-left:20px;
+    }
+    .checkpoint{
+        border:1px solid black;
+        border-radius:5px;
+        padding:10px 10px;
+        position:relative;
+        margin:15px auto;
+    }
+    .checkpoint:nth-child(odd)::before,.checkpoint:nth-child(even)::before{
+        content:' ';
+        background:black;
+        width: 22px;
+        height:1px;
+        position:absolute;
+        top:50%;
+        left:-22px;
+    }
+    .checkpoint:nth-child(odd) div::before,.checkpoint:nth-child(even) div::before{
+        content: ' ';
+        background:black;
+        width:15px;
+        height:15px;
+        border-radius:50%;
+        position:absolute;
+        top:45%;
+        left:-28.5px;
+    }
 </style>
 <body>
   <div class="bg">
@@ -127,6 +159,27 @@ much interactive.</p><br><button class="contact">Contact</button><br><br><br>
 <h1 style="color:#c72434">Studies</h1><br>
 <p>about my studies since from school</p>
 <p class="dash"><b>_</b></p><br><br>
+</div>
+  <div class="timeline">
+    <div class="checkpoint">
+        <div>
+            <h2>Lion</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci harum vitae cupiditate unde explicabo inventore tenetur asperiores natus fuga dolore, neque quae quo eos deserunt provident eum aperiam nihil eaque.</p>
+        </div>
+    </div>
+    <div class="checkpoint">
+        <div>
+            <h2>Tiger</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci harum vitae cupiditate unde explicabo inventore tenetur asperiores natus fuga dolore, neque quae quo eos deserunt provident eum aperiam nihil eaque.</p>
+        </div>
+    </div>
+    <div class="checkpoint">
+        <div>
+            <h2>Monkey</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci harum vitae cupiditate unde explicabo inventore tenetur asperiores natus fuga dolore, neque quae quo eos deserunt provident eum aperiam nihil eaque.</p>
+        </div>
+    </div>
+    
 </div>
 <div>
 <h1 style="color:#c72434">Contact me</h1><br>
