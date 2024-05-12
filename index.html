@@ -16,15 +16,17 @@ color:#707070;
 }
 body{
 height:1000vh;
-font-family: "Exo 2", sans-serif;
+font-family: "Ubuntu sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: weight;
   font-style: normal;
+  font-variation-settings:"wdth" 100;
 }
 div.bg{
 width:100%;
 height:700px;
-background-image:url('HD-wallpaper-laptop-camera-graphy~2.jpg');
+background-color: #0e39e6;
+background-image:url('/storage/emulated/0/Pictures/coding images/HD-wallpaper-laptop-camera-graphy~2.jpg');
 background-attachment:fixed;
 background-size:cover;
 display:flex;
@@ -54,7 +56,7 @@ background-color:#0e39e6;
 border:none;
 border-radius:5px;
 color:white;
-width:30%;
+width:20%;
 height:40px;
 font-size:20px;
 }
@@ -76,15 +78,34 @@ margin-bottom:20px;
 input.contact::placeholder{
 padding-left:15px;
 }
-input.help{
-width:90%;
-line-height:15em;
-border:1px solid grey;
-border-radius:5px;
+textarea.help{
+  width:87%;
+  height:200px;
+  border:1px solid grey;
+  border-radius:5px;
+  padding:20px;
+  margin-bottom:20px;
 }
-input.help::placeholder{
-position:relative;
-left:15px;
+div.send{
+  text-align:left;
+  margin-left:48px;
+}
+p.name-for-add{
+  font-size:medium;
+}
+div.address{
+  text-align:left;
+  margin-top:20px;
+  margin-left:60px;
+}
+div.address{
+  text-align: left;
+}
+div.width{
+  width:30%;
+}
+span.clgadd,.homeadd{
+  color:#0aca7d
 }
 </style>
 <body>
@@ -95,14 +116,14 @@ left:15px;
 <h1 style="color:#c72434">About me</h1><br>
 <p>Let me myself</p>
 <p class="dash"><b>_</b></p><br><br>
-<img class="bg" src="IMG_0490-1.jpg" width="300px" height="400px"><br>
+<img class="bg" src="/storage/emulated/0/Download/IMG_0490-1/IMG_0490-1.jpg" width="300px" height="400px"><br>
 <p class="name">GOKUL ANANTH</p>
 </center><br>
 <p class="about">I am from Komarapalayam, Namakkal.Currently I am pursuing my B.E degree in Computer Science and Engineering
 at K.S.R College of Engineering. I love to design web pages and also like to add more animations to make it 
 much interactive.</p><br><button class="contact">Contact</button><br><br><br>
 <center>
-<div>
+<div class="contact">
 <h1 style="color:#c72434">Studies</h1><br>
 <p>about my studies since from school</p>
 <p class="dash"><b>_</b></p><br><br>
@@ -114,7 +135,19 @@ much interactive.</p><br><button class="contact">Contact</button><br><br><br>
 <input class="contact" type="text" placeholder="Name...">
 <input class="contact" type="number" placeholder="Phone...">
 <input class="contact" type="email" placeholder="E-mail...">
-<input class="help" type="text" placeholder="How can we help you?">
+<textarea class="help" type="text" placeholder="How can we help you?"></textarea>
+</div>
+<div class="send">
+  <button class="contact">Send</button>
+</div>
+<div class="address">
+  <div class="width">
+    <p class="name-for-add" style=" color:black;"><i><b>Gokul Ananth</b></i></p><br>
+  <span class="clgadd">COLLEGE ADDRESS : </span><br><span><br>(2022-2026) batch, <br>KSR College of Engineering, <br>BE COMPUTER SCIENCE AND ENGINEERING, <br>Thiruchengode - 637 215.</span><br><br>
+  <span class="homeadd">HOME ADDRESS : </span><br><span><br>1-15/1,Karumariyamman kovil veethi, <br>Periyar Nagar, <br>Olappalayam, <br>Komarapalayam - 638 183, <br>Namakkal.</span><br><br>
+  <p>E-mail :  <a href="gokulananthcse2023@ksrce.ac.in">gokulananthcse2023@ksrce.ac.in</a></p>
+  <p>Phone : +91 6382541084</p>
+  </div>
 </div>
 </body>
 </html>
