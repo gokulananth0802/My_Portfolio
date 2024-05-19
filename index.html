@@ -17,7 +17,7 @@ font-family: "Exo 2", sans-serif;
   font-weight: 400;
 }
 body{
-height:100vh;
+height:1000vh;
 font-family: "Ubuntu sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
@@ -149,10 +149,23 @@ margin-top:10px;
       background:black;
       width:15px;
       height:15px;
+      border:1px solid black;
       border-radius:50%;
       position:absolute;
       top:18px;
       left:-28.5px;
+  }
+  .checkpoint:nth-child(odd) div::before:hover,.checkpoint:nth-child(even) div::before:hover{
+    content: ' ';
+      background:white;
+      width:50px;
+      height:50px;
+      border:1px solid black;
+      border-radius:50%;
+      position:absolute;
+      top:18px;
+      left:-28.5px;
+      transition:1s;
   }
   .checkpoint div{
   text-align:left;
@@ -188,6 +201,67 @@ margin-top:10px;
     width:35px;
     height:35px;
   }
+   @media all and (max-width:900px){
+  .slider-container{
+        overflow-X:hidden;
+        height:700px;
+    }
+    .slider{
+        display:flex;
+        transition: transform 1s ease;
+    }
+    .card{
+        padding:25px;
+        flex:0 0 100%;
+        margin-right:20px;
+        text-align:center;
+        position: relative;
+    }
+    .onlycard1{
+        position: absolute;
+        left: 25%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding:0px 20px;
+    }
+    .onlycard2{
+        position: relative;
+        left: 25%;
+        width:50%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding:0px 10px;
+    }
+    .skillimg{
+        margin:10px;
+    }
+    .skill p{
+      font-size:13px;
+      font-weight:400;
+    }
+    .skill h3{
+      font-weight:700;
+    }
+}
+  @media all and (max-width:600px){
+      .onlycard1{
+        position: absolute;
+        left: 3%;
+        width:75%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding-bottom:20px;
+    }
+    .onlycard2{
+        position: relative;
+        left:-30px;
+        width:87%;
+        border:2px solid grey;
+        border-radius:20px;
+        padding:0px 10px;
+        padding-bottom:20px;
+    }
+    }
 </style>
 <body>
   <!-- Starting of social media networks -->
@@ -257,10 +331,51 @@ much interactive.</p><br><button class="contact">Contact</button><br><br><br>
 
 <h1 style="color:#c72434">Skills</h1><br>
 <p>What I do?</p>
-<p class="dash" style="color:#c72434;"><b>_</b></p><br><br>
-
+<p class="dash" style="color:#c72434;"><b>_</b></p><br>
+<div class="slider-container">
+    <div class="slider">
+        <div class="card">
+            <div class="onlycard1">
+                <div class="skill">
+                    <img class="skillimg" src="user-experience.png" alt="skillimg" width="100px" height="100px">
+                    <h3>UI / UX designing</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="front-end.png" alt="skillimg" width="100px" height="100px">
+                    <h3>Front-End developer</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="backend.png" alt="skillimg" width="100px" height="100px">
+                    <h3>Back-End developer</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="onlycard2">
+                <div class="skill">
+                    <img class="skillimg" src="business.png" alt="skillimg" width="100px" height="100px">
+                     <h3>Active Listener</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="leadership.png" alt="skillimg" width="100px" height="100px">
+                    <h3>Leadership</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+                <div class="skill">
+                    <img class="skillimg" src="coordinator.png" alt="skillimg" width="100px" height="100px">
+                    <h3>Time and Work Management</h3><br>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis illo asperiores, nemo perspiciatis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Completion of Skills-->
-<div>
+<div class="contactme">
 <h1 style="color:#c72434">Contact me</h1><br>
 <p>Get in touch</p>
 <p class="dash"><b>_</b></p><br>
@@ -285,4 +400,23 @@ much interactive.</p><br><button class="contact">Contact</button><br><br><br>
 <p>© Copyrights and design belongs to Gajendran M</p>
 </div>
 </body>
-</html>
+<script>
+  let slider=document.querySelector('.slider');
+    let cards=document.querySelectorAll('.card');
+    let cardWidth=cards[0].offsetWidth;
+    let currentIndex=0;
+
+    function nextCard(){
+        currentIndex++;
+        if(currentIndex>cards.length-1){
+            currentIndex=0;
+        }
+        updatePosition();
+    }
+    function updatePosition(){
+        let newPosition=-currentIndex*cardWidth;
+        slider.style.transform=`translateX(${newPosition}px)`;
+    }
+    setInterval(nextCard,3000)
+</script>
+  </html>
